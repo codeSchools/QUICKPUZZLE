@@ -4,12 +4,12 @@
         "source": "/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/exploded-aar/com.android.support/design/25.1.0/res/drawable-xxxhdpi-v4/design_ic_visibility_off.png"
     },
     {
-        "merged": "/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4/abc_scrubber_control_to_pressed_mtrl_005.png",
-        "source": "/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable-xxxhdpi-v4/abc_scrubber_control_to_pressed_mtrl_005.png"
-    },
-    {
         "merged": "/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4/abc_ic_star_half_black_16dp.png",
         "source": "/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable-xxxhdpi-v4/abc_ic_star_half_black_16dp.png"
+    },
+    {
+        "merged": "/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4/abc_scrubber_control_to_pressed_mtrl_005.png",
+        "source": "/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable-xxxhdpi-v4/abc_scrubber_control_to_pressed_mtrl_005.png"
     },
     {
         "merged": "/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4/abc_ic_star_black_36dp.png",
