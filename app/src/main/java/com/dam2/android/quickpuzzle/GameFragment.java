@@ -82,12 +82,13 @@ class ImageAdapter2 extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
                     case 1:
                         PecaHolder1 viewHolder = (PecaHolder1) holder;
                         viewHolder.mImage.setImageResource( mThumbIds[position] );
-
+                        viewHolder.setNumItem( position );
                         break;
 
                     case 2:
 
                         PecaHolder2 viewHolder2 = (PecaHolder2) holder;
+                        viewHolder2.setNumItem( position );
                         break;
                 }
             }
@@ -96,5 +97,7 @@ class ImageAdapter2 extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
             public int getItemCount() {
                 return mThumbIds.length;
             }
+
+
 }
 

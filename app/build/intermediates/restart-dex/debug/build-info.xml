@@ -5,7 +5,7 @@
     density="xxhdpi"
     format="8"
     plugin-version="2.2.3"
-    timestamp="10540059788490"
+    timestamp="18708507905716"
     token="-3728440956549098026"
     verifier="COMPATIBLE" >
 
@@ -14,13 +14,13 @@
         duration="100" />
     <task
         name="instant-run-dex"
-        duration="15" />
+        duration="8" />
     <task
         name="instant-run-transform"
-        duration="7" />
+        duration="5" />
     <task
         name="verifier"
-        duration="1" />
+        duration="3" />
 
     <artifact
         location="/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/reload-dex/debug/classes.dex"
@@ -34,28 +34,77 @@
             type="MAIN" />
     </build>
     <build
-        timestamp="9917116857188"
+        timestamp="14539381479793"
+        verifier="FIELD_REMOVED" >
+        <artifact
+            location="/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_3/classes.dex"
+            type="DEX" />
+    </build>
+    <build
+        timestamp="14842464306836"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_7/classes.dex"
+            type="DEX" />
+    </build>
+    <build
+        timestamp="15214378822105"
         verifier="COMPATIBLE" >
         <artifact
-            location="/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/builds/debug/9917116857188/classes.dex"
+            location="/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/builds/debug/15214378822105/classes.dex"
             type="RELOAD_DEX" />
     </build>
     <build
-        timestamp="10052394953026"
+        timestamp="16712431906291"
         verifier="COMPATIBLE" >
         <artifact
-            location="/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/builds/debug/10052394953026/classes.dex"
+            location="/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/builds/debug/16712431906291/classes.dex"
             type="RELOAD_DEX" />
     </build>
     <build
-        timestamp="10519220513269"
+        timestamp="16918104645281"
         verifier="COMPATIBLE" >
         <artifact
-            location="/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/builds/debug/10519220513269/classes.dex"
+            location="/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/builds/debug/16918104645281/classes.dex"
             type="RELOAD_DEX" />
     </build>
     <build
-        timestamp="10540059788490"
+        timestamp="16991436942871"
+        verifier="COMPATIBLE" >
+        <artifact
+            location="/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/builds/debug/16991436942871/classes.dex"
+            type="RELOAD_DEX" />
+    </build>
+    <build
+        timestamp="17628167171791"
+        verifier="COMPATIBLE" >
+        <artifact
+            location="/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/builds/debug/17628167171791/classes.dex"
+            type="RELOAD_DEX" />
+    </build>
+    <build
+        timestamp="17655139350905"
+        verifier="COMPATIBLE" >
+        <artifact
+            location="/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/builds/debug/17655139350905/classes.dex"
+            type="RELOAD_DEX" />
+    </build>
+    <build
+        timestamp="17691426270289"
+        verifier="COMPATIBLE" >
+        <artifact
+            location="/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/builds/debug/17691426270289/classes.dex"
+            type="RELOAD_DEX" />
+    </build>
+    <build
+        timestamp="18545934079014"
+        verifier="COMPATIBLE" >
+        <artifact
+            location="/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/builds/debug/18545934079014/classes.dex"
+            type="RELOAD_DEX" />
+    </build>
+    <build
+        timestamp="18708507905716"
         verifier="COMPATIBLE" >
         <artifact
             location="/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/reload-dex/debug/classes.dex"

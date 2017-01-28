@@ -11,9 +11,19 @@ import android.widget.RelativeLayout;
  */
 
 public abstract class PecaHolder extends RecyclerView.ViewHolder{
-    private boolean possibledrop;
-    private ImageView mImage;
-    private RelativeLayout rel;
+    public boolean possibledrop;
+    public ImageView mImage;
+    public RelativeLayout rel;
+    public int numItem;
     public PecaHolder(LayoutInflater inflater, int resource, ViewGroup container){
         super(inflater.inflate(resource, container,false));}
+
+
+    public int getNumItem() {
+        return numItem;
+    }
+
+    public void setNumItem(int numItem) {
+        this.numItem = numItem;
+    }
 }

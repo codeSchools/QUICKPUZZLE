@@ -20,7 +20,6 @@ public class PecaHolder1 extends PecaHolder {
     public PecaHolder1(LayoutInflater inflater, ViewGroup container){
         super(inflater, R.layout.list_item,container);
         rel = (RelativeLayout) itemView.findViewById(R.id.containerpiecepuzzle);
-        rel.setOnDragListener(new MyDragListener());
         mImage=(ImageView) rel.findViewById( R.id.list_item_image);
         mImage.setOnTouchListener(new MyTouchListener());
     }
