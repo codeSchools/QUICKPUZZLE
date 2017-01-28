@@ -12,39 +12,12 @@
     </item>
     <item
         is-multidex="true"
-        jar="/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.1.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="aee64634871d88a419d59eb743c1258a60f19700">
-        <dex dex="/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-25.1.0_ddbcd66b76e074b09fed6c655b081b660e2bbb38/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/25.1.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
         sha1="b266c8faa5af72e579b9da36ef35053ffed6ac64">
         <dex dex="/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-25.1.0_2c34a5c8fc6c30d137c5d1d872a9852db3b369c0/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.1.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="f02263e35e52668dd17b73bf961437e3d562b35f">
-        <dex dex="/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-25.1.0_7ca3c8624696cb6980b51dc7a4ae9fd7deb5e37d/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.1.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="2a53c4f3518116b8c6aee0e477233f0f7da8616f">
-        <dex dex="/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-25.1.0_598a91633e3e8bf6f4f89baa3295fafe4afe4e54/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -75,20 +48,11 @@
     </item>
     <item
         is-multidex="true"
-        jar="/home/oriol/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/25.1.0/support-annotations-25.1.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="64cb6b229a8bdfd907bc8dd46839a0053e4c018d">
-        <dex dex="/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-25.1.0_404f0efa269df0cb35f909a6912179ebd57c2337/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="d5351135e50112aff181af8d94f3572bb0d052fb">
+        sha1="d6796db143d86bd7ff46ba6fb1224bdecbea82e1">
         <dex dex="/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_b586e9de75c556886f94558e85b125d47a012cf1/classes.dex" />
     </item>
     <item
@@ -102,11 +66,56 @@
     </item>
     <item
         is-multidex="true"
+        jar="/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/exploded-aar/com.android.support/design/25.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="30103d98fa5ed824b54af839c85e2111f9bde8ec">
+        <dex dex="/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-25.1.0_45dd9cf3975581db664a1fbb8a29c641778d0dc9/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="aee64634871d88a419d59eb743c1258a60f19700">
+        <dex dex="/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-25.1.0_ddbcd66b76e074b09fed6c655b081b660e2bbb38/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="f02263e35e52668dd17b73bf961437e3d562b35f">
+        <dex dex="/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-25.1.0_7ca3c8624696cb6980b51dc7a4ae9fd7deb5e37d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="2a53c4f3518116b8c6aee0e477233f0f7da8616f">
+        <dex dex="/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-25.1.0_598a91633e3e8bf6f4f89baa3295fafe4afe4e54/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/oriol/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/25.1.0/support-annotations-25.1.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="64cb6b229a8bdfd907bc8dd46839a0053e4c018d">
+        <dex dex="/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-25.1.0_404f0efa269df0cb35f909a6912179ebd57c2337/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="6f7a5818b008ccf9415c0ab25828c5fd4d7a464b">
+        sha1="39d176163f47707e338f486e5129fbea0a532efd">
         <dex dex="/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_6b38ce30876d4895d19ffca60c82e1c41e96b0af/classes.dex" />
     </item>
     <item
@@ -135,15 +144,6 @@
         revision="25.0.2"
         sha1="0a0ef86b7fa568a52bf6214a0326ca1f1d618da7">
         <dex dex="/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-25.1.0_153e997477aadcc25643bc7d048b2862bd72c80c/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/exploded-aar/com.android.support/design/25.1.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="30103d98fa5ed824b54af839c85e2111f9bde8ec">
-        <dex dex="/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-25.1.0_45dd9cf3975581db664a1fbb8a29c641778d0dc9/classes.dex" />
     </item>
 
 </items>
