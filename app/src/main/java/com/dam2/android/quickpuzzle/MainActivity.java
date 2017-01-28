@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intent);
                 break;
             case R.id.btPlayMyPhoto:
-                Intent intent2 = new Intent(this, GameActivitySenseFragment.class);
+                Intent intent2 = new Intent(this, GameActivity.class);
                 startActivity(intent2);
                 break;
         }

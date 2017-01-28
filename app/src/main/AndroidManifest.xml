@@ -21,8 +21,6 @@
         </activity>
         <activity android:name=".GameFragment">
         </activity>
-        <activity android:name=".GameActivitySenseFragment">
-        </activity>
     </application>
 
 </manifest>

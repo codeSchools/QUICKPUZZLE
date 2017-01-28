@@ -28,8 +28,6 @@
         </activity>
         <activity android:name="com.dam2.android.quickpuzzle.GameFragment" >
         </activity>
-        <activity android:name="com.dam2.android.quickpuzzle.GameActivitySenseFragment" >
-        </activity>
     </application>
 
 </manifest>
