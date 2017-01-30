@@ -65,9 +65,9 @@ public class GameFragment extends Fragment {
 }
 
 class ImageAdapter2 extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
-            private Integer[] mThumbIds;
             private  Context mContext;
             private Bitmap[] imatges;
+
            @Override
            public int getItemViewType(int position) {
               if(position==imatges.length-1)
@@ -96,7 +96,7 @@ class ImageAdapter2 extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
                 switch (holder.getItemViewType()) {
                     case 1:
                         PecaHolder1 viewHolder = (PecaHolder1) holder;
-                        viewHolder.mImage.setImageResource( mThumbIds[position] );
+                        viewHolder.mImage.setImageBitmap( imatges[position] );
                         viewHolder.setNumItem( position );
                         break;
 
@@ -110,7 +110,7 @@ class ImageAdapter2 extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
 
             @Override
             public int getItemCount() {
-                return mThumbIds.length;
+                return imatges.length;
             }
 
 
