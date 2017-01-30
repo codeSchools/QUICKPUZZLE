@@ -2,5 +2,9 @@
     {
         "merged": "/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/res/merged/debug/layout-sw600dp-v13/design_layout_snackbar.xml",
         "source": "/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/exploded-aar/com.android.support/design/25.1.0/res/layout-sw600dp-v13/design_layout_snackbar.xml"
+    },
+    {
+        "merged": "/home/newdarkworld/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/res/merged/debug/layout-sw600dp-v13/design_layout_snackbar.xml",
+        "source": "/home/newdarkworld/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/exploded-aar/com.android.support/design/25.1.0/res/layout-sw600dp-v13/design_layout_snackbar.xml"
     }
 ]

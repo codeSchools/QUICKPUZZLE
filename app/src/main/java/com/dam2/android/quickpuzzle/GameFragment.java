@@ -1,7 +1,7 @@
 package com.dam2.android.quickpuzzle;
 
-import android.content.ClipData;
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
@@ -14,6 +14,7 @@ import com.dam2.android.quickpuzzle.Holders.PecaHolder1;
 import com.dam2.android.quickpuzzle.Holders.PecaHolder2;
 
 public class GameFragment extends Fragment {
+
     public Integer[] mThumbIds = {
             R.drawable.peca, R.drawable.peca,
             R.drawable.peca, R.drawable.peca,
