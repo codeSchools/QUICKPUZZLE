@@ -9,6 +9,7 @@ import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -60,7 +61,7 @@ public class GameFragment extends Fragment {
                         height/countColumns);
             }
         }
-
+Log.v(" imatges num", String.valueOf(  imatges.length));
           return imatges;
 
     }
@@ -99,6 +100,7 @@ class ImageAdapter2 extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
                     case 1:
                         PecaHolder1 viewHolder = (PecaHolder1) holder;
                         viewHolder.mImage.setImageBitmap( imatges[position] );
+                        Log.v("position", String.valueOf( position));
                         viewHolder.setNumItem( position );
                         break;
 
