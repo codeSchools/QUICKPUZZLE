@@ -40,7 +40,7 @@ public class GameFragment extends Fragment {
         Bitmap bmp= BitmapFactory.decodeResource(getResources(), R.drawable.homer);
         Bitmap[] cropedBitmap = new Bitmap[9];
         cropedBitmap[0]= Bitmap.createBitmap(bmp, 0,0, bmp.getWidth()/3, bmp.getHeight()/3);
-//
+//////
 
 
         recyclerView.setLayoutManager(new GridLayoutManager(getActivity(),3));
