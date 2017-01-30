@@ -52,7 +52,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="d6796db143d86bd7ff46ba6fb1224bdecbea82e1">
+        sha1="541c24426b3c65e1c2ce5ca4491d2f30b2cdaf15">
         <dex dex="/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_b586e9de75c556886f94558e85b125d47a012cf1/classes.dex" />
     </item>
     <item
@@ -84,21 +84,21 @@
     </item>
     <item
         is-multidex="true"
-        jar="/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.1.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="f02263e35e52668dd17b73bf961437e3d562b35f">
-        <dex dex="/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-25.1.0_7ca3c8624696cb6980b51dc7a4ae9fd7deb5e37d/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.1.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
         sha1="2a53c4f3518116b8c6aee0e477233f0f7da8616f">
         <dex dex="/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-25.1.0_598a91633e3e8bf6f4f89baa3295fafe4afe4e54/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="f02263e35e52668dd17b73bf961437e3d562b35f">
+        <dex dex="/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-25.1.0_7ca3c8624696cb6980b51dc7a4ae9fd7deb5e37d/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -115,7 +115,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="39d176163f47707e338f486e5129fbea0a532efd">
+        sha1="30c0581037ed68fe38ebf2c1ca5771b4e74862aa">
         <dex dex="/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_6b38ce30876d4895d19ffca60c82e1c41e96b0af/classes.dex" />
     </item>
     <item

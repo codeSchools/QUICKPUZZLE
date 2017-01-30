@@ -4,8 +4,6 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
-
-import com.dam2.android.quickpuzzle.Holders.Listeners.MyDragListener;
 import com.dam2.android.quickpuzzle.Holders.Listeners.MyTouchListener;
 import com.dam2.android.quickpuzzle.R;
 
@@ -14,7 +12,7 @@ import com.dam2.android.quickpuzzle.R;
  */
 
 public class PecaHolder1 extends PecaHolder {
-    public boolean possibledrop =true;
+
     public ImageView mImage;
     public RelativeLayout rel;
     public PecaHolder1(LayoutInflater inflater, ViewGroup container){

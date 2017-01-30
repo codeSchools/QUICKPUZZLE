@@ -5,7 +5,6 @@ import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 
 import com.dam2.android.quickpuzzle.Holders.Listeners.MyDragListener;
-import com.dam2.android.quickpuzzle.Holders.Listeners.MyTouchListener;
 import com.dam2.android.quickpuzzle.R;
 
 /**
@@ -13,8 +12,8 @@ import com.dam2.android.quickpuzzle.R;
  */
 public class PecaHolder2 extends PecaHolder {
 
-    public boolean possibledrop =true;
-     public RelativeLayout rel;
+
+    public RelativeLayout rel;
 
     public PecaHolder2(LayoutInflater inflater, ViewGroup container) {
 

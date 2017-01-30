@@ -11,7 +11,7 @@ import android.widget.RelativeLayout;
  */
 
 public abstract class PecaHolder extends RecyclerView.ViewHolder{
-    public boolean possibledrop;
+
     public ImageView mImage;
     public RelativeLayout rel;
     public int numItem;
