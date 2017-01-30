@@ -2,6 +2,8 @@ package com.dam2.android.quickpuzzle;
 
 import android.content.ClipData;
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
@@ -34,7 +36,13 @@ public class GameFragment extends Fragment {
 
         RecyclerView recyclerView = (RecyclerView) v.findViewById(R.id.fragment_quickpuzzle);
 
-        // Instance of ImageAdapter Class
+
+        Bitmap bmp= BitmapFactory.decodeResource(getResources(), R.drawable.homer);
+        Bitmap[] cropedBitmap = new Bitmap[9];
+        cropedBitmap[0]= Bitmap.createBitmap(bmp, 0,0, bmp.getWidth()/3, bmp.getHeight()/3);
+
+
+
         recyclerView.setLayoutManager(new GridLayoutManager(getActivity(),3));
         recyclerView.setAdapter( new ImageAdapter2(mThumbIds,getContext()) );
        // recyclerView.setOnDragListener(new MyDragListener());
