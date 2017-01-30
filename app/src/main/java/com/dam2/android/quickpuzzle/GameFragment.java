@@ -25,6 +25,8 @@ public class GameFragment extends Fragment {
 
     };
     private Bitmap imatgeGran;
+    private final int countColumns=3;
+    public Bitmap[] imatges;
 //modificacio
     public static GameFragment newInstance(){
         return new GameFragment();
@@ -37,28 +39,43 @@ public class GameFragment extends Fragment {
 
         RecyclerView recyclerView = (RecyclerView) v.findViewById(R.id.fragment_quickpuzzle);
 
-        imatgeGran = new BitmapFactory.decodeResource( getResources(),R.drawable.homer);
+        imatgeGran=BitmapFactory.decodeResource(getResources(), R.drawable.homer);
+
+        imatges=puzzleGeneratorImages(imatgeGran, countColumns);
+
         // Instance of ImageAdapter Class
-        recyclerView.setLayoutManager(new GridLayoutManager(getActivity(),3));
-        recyclerView.setAdapter( new ImageAdapter2(mThumbIds,getContext()) );
+        recyclerView.setLayoutManager(new GridLayoutManager(getActivity(),countColumns));
+        recyclerView.setAdapter( new ImageAdapter2(imatges,getContext()) );
        // recyclerView.setOnDragListener(new MyDragListener());
         return v;
     }
+    private Bitmap[] puzzleGeneratorImages(Bitmap imatgeGran,int countColumns){
+        Bitmap[] imatges=new Bitmap[countColumns*countColumns];
+        int k=0,width = imatgeGran.getWidth(), height = imatgeGran.getHeight();
+        for(int i =0;i<countColumns; i++){
+            for(int j=0; j<countColumns;j++){
+                imatges[k]=Bitmap.createBitmap( imatgeGran,(width*j)/countColumns,(height*i)/countColumns , width/countColumns,
+                        height/countColumns);
+            }
+        }
+
+          return imatges;
 
     }
+}
 
 class ImageAdapter2 extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
             private Integer[] mThumbIds;
             private  Context mContext;
-
+            private Bitmap[] imatges;
            @Override
            public int getItemViewType(int position) {
-              if(position==mThumbIds.length-1)
+              if(position==imatges.length-1)
                return 2;
                else return 1;
            }
-            public ImageAdapter2(Integer[] mThumbIds, Context context) {
-                this.mThumbIds=mThumbIds;
+            public ImageAdapter2(Bitmap[] imatges, Context context) {
+                this.imatges= imatges;
                 this.mContext= context;
                 //this.context = context;
             }

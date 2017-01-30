@@ -25,7 +25,8 @@ public final class Partida {
             positions.put(i, null);
         }
     }
-
+    public static int getCountColumns(){
+        return }
 
     public static boolean setPosition(int idCasella,int posNova ){
         //positions.replace(idCasella,positions.)
