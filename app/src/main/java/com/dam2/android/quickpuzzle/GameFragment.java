@@ -52,12 +52,12 @@ public class GameFragment extends Fragment {
     }
     private Bitmap[] puzzleGeneratorImages(Bitmap imatgeGran,int countColumns){
         Bitmap[] imatges = new Bitmap[countColumns*countColumns];
-        if(imatgeGran.getWidth()<imatgeGran.getHeight()) imatgeGran.setHeight(imatgeGran.getWidth());
-        else imatgeGran.setWidth(imatgeGran.getHeight());
+       // if(imatgeGran.getWidth()<imatgeGran.getHeight()) imatgeGran.setHeight(imatgeGran.getWidth());
+       // else imatgeGran.setWidth(imatgeGran.getHeight());
         int k=0,width = imatgeGran.getWidth(), height = imatgeGran.getHeight();
         for(int i =0;i<countColumns; i++){
-            for(int j=0; j<countColumns;j++){
-                imatges[k]=Bitmap.createBitmap( imatgeGran,(width*j)/countColumns,(height*i)/countColumns , width/countColumns,
+            for(int j=0; j<countColumns;j++,k++){
+                imatges[k]=Bitmap.createBitmap( imatgeGran,(width*j)/countColumns,(height*i)/countColumns, width/countColumns,
                         height/countColumns);
             }
         }
