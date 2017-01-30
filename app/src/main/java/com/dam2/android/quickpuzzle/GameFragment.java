@@ -24,7 +24,7 @@ public class GameFragment extends Fragment {
             R.drawable.peca
 
     };
-//modificacio
+//modificacio////
     public static GameFragment newInstance(){
         return new GameFragment();
     }
