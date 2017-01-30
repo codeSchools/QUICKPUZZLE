@@ -57,15 +57,17 @@ public class MyDragListener implements View.OnDragListener {
 
                     owner.removeView( view );
                     View view2 = new View( view.getContext() );
-                    ;
+                    // Aqui va el pas de la posicio nova cap a Partida
 
                     owner.addView( view2 );
                     owner.setOnDragListener( new MyDragListener() );
                     RelativeLayout container = (RelativeLayout) v;
                     container.setOnDragListener( null );
-                    container.getId();
+                    int posComprovacio = container.getId();
+
                     container.addView( view );
                     view.setVisibility( View.VISIBLE );
+
                 }else{
                     view.setVisibility( View.VISIBLE );
                     return false;
