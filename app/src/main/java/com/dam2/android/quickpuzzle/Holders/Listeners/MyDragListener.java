@@ -3,6 +3,7 @@ package com.dam2.android.quickpuzzle.Holders.Listeners;
 import android.content.ClipData;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.DragEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -67,6 +68,12 @@ public class MyDragListener implements View.OnDragListener {
 
                     container.addView( view );
                     view.setVisibility( View.VISIBLE );
+                    Log.v("container",String.valueOf( container.getId()));
+                    Log.v("view",String.valueOf( view.getId()));
+                    if(container.getId()==view.getId()){
+                        Log.v("Posicio","Posicio correcte!");
+                    }
+
 
                 }else{
                     view.setVisibility( View.VISIBLE );

@@ -16,6 +16,10 @@ import android.view.ViewGroup;
 import com.dam2.android.quickpuzzle.Holders.PecaHolder1;
 import com.dam2.android.quickpuzzle.Holders.PecaHolder2;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 public class GameFragment extends Fragment {
     public Integer[] mThumbIds = {
             R.drawable.peca, R.drawable.peca,
@@ -27,7 +31,7 @@ public class GameFragment extends Fragment {
     };
     private Bitmap imatgeGran;
     private final int countColumns=3;
-    public Bitmap[] imatges;
+    public List< ImatgeBitmapPosition> imatges;
 //modificacio
     public static GameFragment newInstance(){
         return new GameFragment();
@@ -50,18 +54,28 @@ public class GameFragment extends Fragment {
        // recyclerView.setOnDragListener(new MyDragListener());
         return v;
     }
-    private Bitmap[] puzzleGeneratorImages(Bitmap imatgeGran,int countColumns){
-        Bitmap[] imatges = new Bitmap[countColumns*countColumns];
-       // if(imatgeGran.getWidth()<imatgeGran.getHeight()) imatgeGran.setHeight(imatgeGran.getWidth());
-       // else imatgeGran.setWidth(imatgeGran.getHeight());
-        int k=0,width = imatgeGran.getWidth(), height = imatgeGran.getHeight();
+    private List< ImatgeBitmapPosition> puzzleGeneratorImages(Bitmap imatgeGran, int countColumns){
+        List< ImatgeBitmapPosition> imatges = new ArrayList<ImatgeBitmapPosition>();
+ //       if(imatgeGran.getWidth()<imatgeGran.getHeight()) imatgeGran.setHeight(imatgeGran.getWidth());
+//        else imatgeGran.setWidth(imatgeGran.getHeight());
+          int k=0,width = imatgeGran.getWidth(), height = imatgeGran.getHeight();
+        Bitmap imatge=Bitmap.createBitmap( imatgeGran,(width*(countColumns-1))/countColumns,(height*(countColumns-1))/countColumns, width/countColumns,
+                height/countColumns);
+        ImatgeBitmapPosition parella = new ImatgeBitmapPosition( imatge,countColumns*countColumns-1 );
         for(int i =0;i<countColumns; i++){
             for(int j=0; j<countColumns;j++,k++){
-                imatges[k]=Bitmap.createBitmap( imatgeGran,(width*j)/countColumns,(height*i)/countColumns, width/countColumns,
+                imatge=Bitmap.createBitmap( imatgeGran,(width*j)/countColumns,(height*i)/countColumns, width/countColumns,
                         height/countColumns);
+                parella = new ImatgeBitmapPosition( imatge,k );
+                if(k<countColumns*countColumns-1){
+                    imatges.add( parella );
+                }
             }
         }
-Log.v(" imatges num", String.valueOf(  imatges.length));
+        Collections.shuffle(imatges);
+        Log.v(" imatges num", String.valueOf(  imatges.size()));
+        imatges.add( parella );
+Log.v(" imatges num", String.valueOf(  imatges.size()));
           return imatges;
 
     }
@@ -69,15 +83,15 @@ Log.v(" imatges num", String.valueOf(  imatges.length));
 
 class ImageAdapter2 extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
             private  Context mContext;
-            private Bitmap[] imatges;
+            private List<ImatgeBitmapPosition>  imatges;
 
            @Override
            public int getItemViewType(int position) {
-              if(position==imatges.length-1)
+              if(position==imatges.size()-1)
                return 2;
                else return 1;
            }
-            public ImageAdapter2(Bitmap[] imatges, Context context) {
+            public ImageAdapter2(List< ImatgeBitmapPosition> imatges, Context context) {
                 this.imatges= imatges;
                 this.mContext= context;
                 //this.context = context;
@@ -99,7 +113,9 @@ class ImageAdapter2 extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
                 switch (holder.getItemViewType()) {
                     case 1:
                         PecaHolder1 viewHolder = (PecaHolder1) holder;
-                        viewHolder.mImage.setImageBitmap( imatges[position] );
+                        viewHolder.mImage.setImageBitmap( imatges.get( position ).getImatge() );
+                        viewHolder.mImage.setId( imatges.get( position ).getPosisioCorrecte() );
+                        viewHolder.rel.setId( position );
                         Log.v("position", String.valueOf( position));
                         viewHolder.setNumItem( position );
                         break;
@@ -107,6 +123,7 @@ class ImageAdapter2 extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
                     case 2:
 
                         PecaHolder2 viewHolder2 = (PecaHolder2) holder;
+                        viewHolder2.rel.setId( position );
                         viewHolder2.setNumItem( position );
                         break;
                 }
@@ -114,7 +131,7 @@ class ImageAdapter2 extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
 
             @Override
             public int getItemCount() {
-                return imatges.length;
+                return imatges.size();
             }
 
 
