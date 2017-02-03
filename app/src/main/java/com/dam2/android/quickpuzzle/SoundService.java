@@ -27,7 +27,7 @@ public class SoundService extends IntentService {
     @Override
     public void onHandleIntent(Intent intent){
         audioManager = (AudioManager) getSystemService(AUDIO_SERVICE);
-        mediaPlayer = mediaPlayer.create(this, );
+        mediaPlayer = mediaPlayer.create(this, R.raw.tetris1);
 
         int resultat = audioManager.requestAudioFocus(
                 mAudioFocusListener, AudioManager.STREAM_MUSIC,
