@@ -12,7 +12,7 @@
             <ImageView
                     android:id="@+id/list_item_image"
                     android:layout_width="match_parent"
-                    android:layout_height="120dp"
+                    android:layout_height="90dp"
                     android:background="@color/red"
                    >
 

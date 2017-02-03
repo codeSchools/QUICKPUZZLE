@@ -3,6 +3,7 @@ package com.dam2.android.quickpuzzle;
 import android.Manifest;
 import android.content.ClipData;
 import android.content.Context;
+import android.content.CursorLoader;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
@@ -75,14 +76,13 @@ public class GameFragment extends Fragment {
 
                 Uri seleccio = intent.getData();
             String[] columna = {MediaStore.Images.Media.DATA};
-
-                Cursor cursor = getContext().getContentResolver().query( seleccio, columna, null, null, null );
-                if( cursor != null && cursor.moveToFirst() ){
-
-                    Random rn = new Random();
-                int indexColumna = cursor.getColumnIndex( columna[0] );
-                    Log.v("index",String.valueOf( indexColumna ));
+        Random rn = new Random();
+        Cursor cursor = getContext().getContentResolver().query(seleccio, columna, null, null, null);;//getContext().getContentResolver().query( seleccio, columna, null, null, null );
+                if( cursor != null && cursor.moveToPosition( rn.nextInt(cursor.getCount())) ){
+                int indexColumna = cursor.getColumnIndex(columna[0]);
+                    Log.v("index",String.valueOf(columna.length ));
                 String rutaFitxer = cursor.getString( indexColumna );
+                    Log.v("ruta : ",String.valueOf(rutaFitxer));
                 cursor.close();
 
                     imatge = BitmapFactory.decodeFile( rutaFitxer );}
@@ -154,6 +154,9 @@ class ImageAdapter2 extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
                         PecaHolder1 viewHolder = (PecaHolder1) holder;
                         viewHolder.mImage.setImageBitmap( imatges.get( position ).getImatge() );
                         viewHolder.mImage.setId( imatges.get( position ).getPosisioCorrecte() );
+                        float scale = mContext.getResources().getDisplayMetrics().density;
+                        //Aquest calcul es perque quedi be si afegim mes columnes
+                        viewHolder.mImage.getLayoutParams().height=(int)(((int) (360/Math.sqrt((double) getItemCount()) ))*scale);
                         viewHolder.rel.setId( position );
                         Log.v("position", String.valueOf( position));
                         viewHolder.setNumItem( position );
