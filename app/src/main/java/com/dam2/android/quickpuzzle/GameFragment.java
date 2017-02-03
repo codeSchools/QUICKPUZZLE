@@ -1,38 +1,47 @@
 package com.dam2.android.quickpuzzle;
 
+import android.Manifest;
 import android.content.ClipData;
 import android.content.Context;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.Uri;
+import android.provider.MediaStore;
 import android.support.annotation.Nullable;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
+import android.support.v4.content.PermissionChecker;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+
 import com.dam2.android.quickpuzzle.Holders.PecaHolder1;
 import com.dam2.android.quickpuzzle.Holders.PecaHolder2;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Random;
 
 public class GameFragment extends Fragment {
-    public Integer[] mThumbIds = {
-            R.drawable.peca, R.drawable.peca,
-            R.drawable.peca, R.drawable.peca,
-            R.drawable.peca,  R.drawable.peca,
-            R.drawable.peca,  R.drawable.peca,
-            R.drawable.peca
 
-    };
     private Bitmap imatgeGran;
+    private Bitmap imatgeGranfromAndroid;
     private final int countColumns=3;
     public List< ImatgeBitmapPosition> imatges;
-//modificacio
+
+    private static final int MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE= 1;
+
+    //modificacio
     public static GameFragment newInstance(){
         return new GameFragment();
     }
@@ -40,13 +49,18 @@ public class GameFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+
         View v = inflater.inflate(R.layout.fragment_quickpuzzle,container,false);
 
         RecyclerView recyclerView = (RecyclerView) v.findViewById(R.id.fragment_quickpuzzle);
 
-        imatgeGran=BitmapFactory.decodeResource(getResources(), R.drawable.homer);
+        imatgeGranfromAndroid= SelectImage();
 
-        imatges=puzzleGeneratorImages(imatgeGran, countColumns);
+
+
+      //  imatgeGran=BitmapFactory.decodeResource(getResources(), R.drawable.homer);
+
+        imatges=puzzleGeneratorImages(imatgeGranfromAndroid, countColumns);
 
         // Instance of ImageAdapter Class
         recyclerView.setLayoutManager(new GridLayoutManager(getActivity(),countColumns));
@@ -54,10 +68,35 @@ public class GameFragment extends Fragment {
        // recyclerView.setOnDragListener(new MyDragListener());
         return v;
     }
-    private List< ImatgeBitmapPosition> puzzleGeneratorImages(Bitmap imatgeGran, int countColumns){
+    private Bitmap SelectImage() {
+        Bitmap imatge;
+        Intent intent = new Intent( Intent.ACTION_PICK,
+                    MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+
+                Uri seleccio = intent.getData();
+            String[] columna = {MediaStore.Images.Media.DATA};
+
+                Cursor cursor = getContext().getContentResolver().query( seleccio, columna, null, null, null );
+                if( cursor != null && cursor.moveToFirst() ){
+
+                    Random rn = new Random();
+                int indexColumna = cursor.getColumnIndex( columna[0] );
+                    Log.v("index",String.valueOf( indexColumna ));
+                String rutaFitxer = cursor.getString( indexColumna );
+                cursor.close();
+
+                    imatge = BitmapFactory.decodeFile( rutaFitxer );}
+                else imatge =BitmapFactory.decodeResource(getResources(), R.drawable.homer);
+
+            return imatge;
+
+
+    }
+    private List<ImatgeBitmapPosition> puzzleGeneratorImages(Bitmap imatgeGran, int countColumns){
         List< ImatgeBitmapPosition> imatges = new ArrayList<ImatgeBitmapPosition>();
- //       if(imatgeGran.getWidth()<imatgeGran.getHeight()) imatgeGran.setHeight(imatgeGran.getWidth());
-//        else imatgeGran.setWidth(imatgeGran.getHeight());
+        Bitmap imatgeRetocada;
+        if(imatgeGran.getWidth()>imatgeGran.getHeight()) imatgeGran= Bitmap.createScaledBitmap(imatgeGran,imatgeGran.getWidth(),imatgeGran.getWidth(),true);
+        else imatgeGran= Bitmap.createScaledBitmap(imatgeGran,imatgeGran.getHeight(),imatgeGran.getHeight(),true);
           int k=0,width = imatgeGran.getWidth(), height = imatgeGran.getHeight();
         Bitmap imatge=Bitmap.createBitmap( imatgeGran,(width*(countColumns-1))/countColumns,(height*(countColumns-1))/countColumns, width/countColumns,
                 height/countColumns);
