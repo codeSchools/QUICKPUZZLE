@@ -1,37 +1,32 @@
 package com.dam2.android.quickpuzzle;
 
 
-import android.app.IntentService;
+import android.app.Service;
 import android.content.Intent;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
+import android.os.IBinder;
+import android.util.Log;
 
 /**
  * Created by newdarkworld on 03/02/17.
  */
 
-public class SoundService extends IntentService {
+public class SoundService extends Service {
 
     public AudioManager audioManager;
     MediaPlayer mediaPlayer;
 
-    /**
-     * Creates an IntentService.  Invoked by your subclass's constructor.
-     *
-     * @param name Used to name the worker thread, important only for debugging.
-     */
-    public SoundService(String name) {
-        super(name);
-    }
-
     @Override
-    public void onHandleIntent(Intent intent){
+    public IBinder onBind(Intent intent){
         audioManager = (AudioManager) getSystemService(AUDIO_SERVICE);
-        mediaPlayer = mediaPlayer.create(this, R.raw.tetris1);
+        mediaPlayer = MediaPlayer.create(this, R.raw.tetris1);
+        Log.v("log","hola");
 
         int resultat = audioManager.requestAudioFocus(
                 mAudioFocusListener, AudioManager.STREAM_MUSIC,
                 AudioManager.AUDIOFOCUS_GAIN_TRANSIENT_MAY_DUCK);
+        Log.v("log",String.valueOf(resultat));
 
         if (resultat == AudioManager.AUDIOFOCUS_REQUEST_GRANTED) {
             mediaPlayer.start();
@@ -44,9 +39,9 @@ public class SoundService extends IntentService {
             //Log.d(LOG, "error en la petició del listener de focus ");
         }
 
+        return null;
     }
-    
-    
+
 
     private AudioManager.OnAudioFocusChangeListener mAudioFocusListener = new AudioManager.OnAudioFocusChangeListener() {
         public void onAudioFocusChange(int focusChange) {
@@ -85,6 +80,7 @@ public class SoundService extends IntentService {
             }
         }
     };
+
 
 
 }

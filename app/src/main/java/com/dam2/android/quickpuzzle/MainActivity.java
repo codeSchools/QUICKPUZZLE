@@ -1,15 +1,64 @@
 package com.dam2.android.quickpuzzle;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
+import android.media.AudioManager;
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+
+    public AudioManager audioManager;
+    private MediaPlayer mediaPlayer;
+    Intent intentAudio;
+/*
+    private AudioManager.OnAudioFocusChangeListener mAudioFocusListener = new AudioManager.OnAudioFocusChangeListener() {
+        public void onAudioFocusChange(int focusChange) {
+
+            switch (focusChange) {
+                //perdem el focus per exemple, una altre reproductor de música
+                case AudioManager.AUDIOFOCUS_LOSS:
+                    mediaPlayer.stop();
+                    //Log.d(LOG, "AudioFocus: rebut AUDIOFOCUS_LOSS");
+                    mediaPlayer.release();
+                    mediaPlayer = null;
+                    break;
+                //perdem el focus temporalement, per exemple, trucada
+                case AudioManager.AUDIOFOCUS_LOSS_TRANSIENT:
+                    if (mediaPlayer.isPlaying())
+                        mediaPlayer.pause();
+
+                    //Log.d(LOG, "AudioFocus: rebut AUDIOFOCUS_LOSS_TRANSIENT");
+
+                    break;
+                //baixem el volum temporalment
+                case AudioManager.AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK:
+                    mediaPlayer.setVolume(0.5f, 0.5f);
+                    //Log.d(LOG, "AudioFocus: rebut AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK");
+                    break;
+
+                //es recupera el focus d'audio
+                case AudioManager.AUDIOFOCUS_GAIN:
+                    mediaPlayer.start();
+                    mediaPlayer.setVolume(1.0f, 1.0f);
+                    //Log.d(LOG, "AudioFocus: rebut AUDIOFOCUS_GAIN");
+                    break;
+
+                default:
+                    //Log.e(LOG, "codi desconegut");
+            }
+        }
+    };*/
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
