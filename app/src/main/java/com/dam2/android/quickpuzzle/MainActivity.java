@@ -1,9 +1,18 @@
 package com.dam2.android.quickpuzzle;
 
 import android.Manifest;
+import android.animation.Animator;
+import android.animation.AnimatorInflater;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
+import android.animation.ArgbEvaluator;
+import android.animation.ObjectAnimator;
+import android.animation.ValueAnimator;
+import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.drawable.TransitionDrawable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.media.AudioManager;
@@ -64,8 +73,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
         setContentView( R.layout.activity_main );
-        findViewById(R.id.btPlay).setOnClickListener(this);
         findViewById(R.id.btPlayMyPhoto).setOnClickListener(this);
+
+
+        int colorFrom = getResources().getColor(R.color.color1);
+        int colorTo = getResources().getColor( R.color.color2);
+
+        int colorTo2 = getResources().getColor( R.color.color2);
+        ValueAnimator colorAnimation = ValueAnimator.ofObject(new ArgbEvaluator(), colorFrom,colorTo);
+        colorAnimation.setDuration(2500); // milliseconds,
+      colorAnimation.setRepeatCount( ValueAnimator.INFINITE );
+        colorAnimation.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+
+            @Override
+            public void onAnimationUpdate(ValueAnimator animator) {
+                findViewById( R.id.activity_main ).setBackgroundColor((int) animator.getAnimatedValue());
+            }
+
+        });
+        colorAnimation.start();
+
         if (ContextCompat.checkSelfPermission(this,
                 Manifest.permission.READ_EXTERNAL_STORAGE)
                 != PackageManager.PERMISSION_GRANTED||ContextCompat.checkSelfPermission(this,
@@ -93,16 +120,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         }
     }
-    public void onClick(View arg0) {
-        switch(arg0.getId()){
-            case R.id.btPlay:
-                Intent intent = new Intent(this, GameActivity.class);
-                startActivity(intent);
-                break;
+    public void onClick(View  view) {
+        switch(view.getId()){
             case R.id.btPlayMyPhoto:
-                Intent intent2 = new Intent(this, GameActivity.class);
-                startActivity(intent2);
+                Intent intent = new Intent(this, GameActivity.class);
+
+                ActivityOptions options = ActivityOptions.makeScaleUpAnimation(view, 0,
+                        0, view.getWidth(), view.getHeight());
+                startActivity(intent,options.toBundle());
                 break;
+
         }
     }
 }

@@ -10,11 +10,13 @@ import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.os.Parcelable;
 import android.provider.MediaStore;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.content.PermissionChecker;
 import android.support.v7.widget.GridLayoutManager;
@@ -23,11 +25,14 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
 import com.dam2.android.quickpuzzle.Holders.PecaHolder1;
 import com.dam2.android.quickpuzzle.Holders.PecaHolder2;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -35,14 +40,12 @@ import java.util.Random;
 
 public class GameFragment extends Fragment {
 
-    private Bitmap imatgeGran;
     private Bitmap imatgeGranfromAndroid;
     private final int countColumns=3;
     public List< ImatgeBitmapPosition> imatges;
+    private RecyclerView mRecyclerView;
 
-    private static final int MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE= 1;
 
-    //modificacio
     public static GameFragment newInstance(){
         return new GameFragment();
     }
@@ -51,23 +54,19 @@ public class GameFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        View v = inflater.inflate(R.layout.fragment_quickpuzzle,container,false);
-
-        RecyclerView recyclerView = (RecyclerView) v.findViewById(R.id.fragment_quickpuzzle);
-
-        imatgeGranfromAndroid= SelectImage();
+        View v= inflater.inflate( R.layout.fragment_quickpuzzle, container, false );
 
 
+            mRecyclerView = (RecyclerView) v.findViewById( R.id.fragment_quickpuzzle );
+            imatgeGranfromAndroid = SelectImage();
+            imatges = puzzleGeneratorImages( imatgeGranfromAndroid, countColumns );
 
-      //  imatgeGran=BitmapFactory.decodeResource(getResources(), R.drawable.homer);
 
-        imatges=puzzleGeneratorImages(imatgeGranfromAndroid, countColumns);
+            mRecyclerView.setLayoutManager( new GridLayoutManager( getActivity(), countColumns ) );
+            mRecyclerView.setAdapter( new ImageAdapter2( imatges, getContext() ) );
 
-        // Instance of ImageAdapter Class
-        recyclerView.setLayoutManager(new GridLayoutManager(getActivity(),countColumns));
-        recyclerView.setAdapter( new ImageAdapter2(imatges,getContext()) );
-       // recyclerView.setOnDragListener(new MyDragListener());
-        return v;
+
+            return v;
     }
     private Bitmap SelectImage() {
         Bitmap imatge;
@@ -78,7 +77,8 @@ public class GameFragment extends Fragment {
             String[] columna = {MediaStore.Images.Media.DATA};
         Random rn = new Random();
         Cursor cursor = getContext().getContentResolver().query(seleccio, columna, null, null, null);;//getContext().getContentResolver().query( seleccio, columna, null, null, null );
-                if( cursor != null && cursor.moveToPosition( rn.nextInt(cursor.getCount())) ){
+                if( cursor != null &&cursor.getCount()>0 ){
+                    cursor.moveToPosition( rn.nextInt(cursor.getCount()));
                 int indexColumna = cursor.getColumnIndex(columna[0]);
                     Log.v("index",String.valueOf(columna.length ));
                 String rutaFitxer = cursor.getString( indexColumna );
@@ -118,6 +118,7 @@ Log.v(" imatges num", String.valueOf(  imatges.size()));
           return imatges;
 
     }
+
 }
 
 class ImageAdapter2 extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
@@ -160,6 +161,9 @@ class ImageAdapter2 extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
                         viewHolder.rel.setId( position );
                         Log.v("position", String.valueOf( position));
                         viewHolder.setNumItem( position );
+                        Animation a = AnimationUtils.loadAnimation(mContext, R.anim.rotation);
+                        a.setDuration(1000);
+                       viewHolder.mImage.startAnimation(a);
                         break;
 
                     case 2:
@@ -167,6 +171,9 @@ class ImageAdapter2 extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
                         PecaHolder2 viewHolder2 = (PecaHolder2) holder;
                         viewHolder2.rel.setId( position );
                         viewHolder2.setNumItem( position );
+                         a = AnimationUtils.loadAnimation(mContext, R.anim.rotation);
+                        a.setDuration(1000);
+                        viewHolder2.rel.startAnimation(a);
                         break;
                 }
             }

@@ -6,4 +6,8 @@
     <color name="red">#FF0000</color>
     <color name="blue">#0000FF</color>
     <color name="green">#00FF00</color>
+    <color name="color1">#d9ffcc</color>
+    <color name="color2">#ccccff</color>
+    <color name="color3">#ffb3d1</color>
+
 </resources>
