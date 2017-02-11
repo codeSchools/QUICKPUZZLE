@@ -2,9 +2,5 @@
     {
         "merged": "/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/res/merged/debug/mipmap-mdpi/ic_launcher.png",
         "source": "/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/src/main/res/mipmap-mdpi/ic_launcher.png"
-    },
-    {
-        "merged": "/home/newdarkworld/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/res/merged/debug/mipmap-mdpi/ic_launcher.png",
-        "source": "/home/newdarkworld/AndroidStudioProjects/QUICKPUZZLE/app/src/main/res/mipmap-mdpi/ic_launcher.png"
     }
 ]

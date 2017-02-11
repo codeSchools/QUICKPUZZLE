@@ -1,4 +1,4 @@
-#Mon Jan 30 18:43:44 CET 2017
+#Sat Feb 11 12:03:10 CET 2017
 base.0=/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_6b38ce30876d4895d19ffca60c82e1c41e96b0af
 renamed.1=classes2.dex
 renamed.0=classes.dex

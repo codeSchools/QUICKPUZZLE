@@ -2,13 +2,14 @@ package com.dam2.android.quickpuzzle.Holders.Listeners;
 
 import android.content.ClipData;
 import android.content.Context;
+import android.media.MediaPlayer;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.DragEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
-
+import  com.dam2.android.quickpuzzle.R;
 
 import com.dam2.android.quickpuzzle.Holders.PecaHolder;
 
@@ -74,9 +75,12 @@ public class MyDragListener implements View.OnDragListener {
                         Log.v("Posicio","Posicio correcte!");
                     }
 
-
+                    MediaPlayer  mediaPlayer = MediaPlayer.create(v.getContext(), R.raw.pop_drip);
+                    mediaPlayer.start();
                 }else{
                     view.setVisibility( View.VISIBLE );
+                    MediaPlayer  mediaPlayer = MediaPlayer.create(v.getContext(), R.raw.pop_drip);
+                    mediaPlayer.start();
                     return false;
                 }
                 break;
@@ -84,7 +88,8 @@ public class MyDragListener implements View.OnDragListener {
                view = (View) event.getLocalState();
 
                     view.setVisibility( View.VISIBLE );
-
+              MediaPlayer  mediaPlayer = MediaPlayer.create(v.getContext(), R.raw.pop_drip);
+                mediaPlayer.start();
 
                 //  v.setBackgroundDrawable(normalShape);
             default:
