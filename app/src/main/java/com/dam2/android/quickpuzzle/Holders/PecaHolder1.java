@@ -21,4 +21,20 @@ public class PecaHolder1 extends PecaHolder {
         mImage=(ImageView) rel.findViewById( R.id.list_item_image);
         mImage.setOnTouchListener(new MyTouchListener());
     }
+
+    public ImageView getmImage() {
+        return mImage;
+    }
+
+    public void setmImage(ImageView mImage) {
+        this.mImage = mImage;
+    }
+
+    public RelativeLayout getRel() {
+        return rel;
+    }
+
+    public void setRel(RelativeLayout rel) {
+        this.rel = rel;
+    }
 }

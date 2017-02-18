@@ -22,4 +22,12 @@ public class PecaHolder2 extends PecaHolder {
         rel.setOnDragListener( new MyDragListener() );
 
     }
+
+    public RelativeLayout getRel() {
+        return rel;
+    }
+
+    public void setRel(RelativeLayout rel) {
+        this.rel = rel;
+    }
 }

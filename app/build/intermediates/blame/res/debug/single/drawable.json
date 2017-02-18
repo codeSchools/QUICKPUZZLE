@@ -120,6 +120,10 @@
         "source": "/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_ratingbar_material.xml"
     },
     {
+        "merged": "/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/res/merged/debug/drawable/mute.png",
+        "source": "/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/src/main/res/drawable/mute.png"
+    },
+    {
         "merged": "/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/res/merged/debug/drawable/abc_ic_voice_search_api_material.xml",
         "source": "/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_ic_voice_search_api_material.xml"
     },
@@ -150,6 +154,10 @@
     {
         "merged": "/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_background_transition_holo_dark.xml",
         "source": "/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_list_selector_background_transition_holo_dark.xml"
+    },
+    {
+        "merged": "/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/res/merged/debug/drawable/volume.png",
+        "source": "/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/src/main/res/drawable/volume.png"
     },
     {
         "merged": "/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/res/merged/debug/drawable/abc_ic_ab_back_material.xml",

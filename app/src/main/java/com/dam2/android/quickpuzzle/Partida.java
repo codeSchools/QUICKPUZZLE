@@ -9,25 +9,27 @@ import java.util.Map;
  */
 
 public final class Partida {
-    private static Map<Integer, Integer> positions;
-
-    public static Partida getInstance(int columns){
-        Partida partida = new Partida(columns);
-        return partida;
+   private static int numintents=0;
+    private static int puntuacio=0;
+    public static int getPuntuacio() {
+        return puntuacio;
     }
 
-    private Partida(){}
-
-    private Partida(int columns){
-       // positions = new Map<Integer, Integer>();
-        for(int i=0;i<columns*columns;i++){
-
-            positions.put(i, null);
-        }
+    public static int getNumintents() {
+        return numintents;
     }
 
-    public static boolean setPosition(int idCasella,int posNova ){
-        //positions.replace(idCasella,positions.)
-       return true;
+    public static void setNumintents(int numintents) {
+        Partida.numintents = numintents;
+    }
+    public static void incrementarIntents(){numintents++;}
+    public static void setPuntuacio(int puntuacio) {
+        Partida.puntuacio = puntuacio;
+    }
+
+    public static void sumarpuntuacio(int increment){
+
+        puntuacio=puntuacio+(increment/numintents)+(increment/4);
+        GameFragment.SetTextViewPuntuacio( puntuacio );
     }
 }

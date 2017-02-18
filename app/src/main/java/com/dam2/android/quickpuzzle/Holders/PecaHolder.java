@@ -18,6 +18,21 @@ public abstract class PecaHolder extends RecyclerView.ViewHolder{
     public PecaHolder(LayoutInflater inflater, int resource, ViewGroup container){
         super(inflater.inflate(resource, container,false));}
 
+    public ImageView getmImage() {
+        return mImage;
+    }
+
+    public void setmImage(ImageView mImage) {
+        this.mImage = mImage;
+    }
+
+    public RelativeLayout getRel() {
+        return rel;
+    }
+
+    public void setRel(RelativeLayout rel) {
+        this.rel = rel;
+    }
 
     public int getNumItem() {
         return numItem;

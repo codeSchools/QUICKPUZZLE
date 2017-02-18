@@ -1,15 +1,20 @@
 package com.dam2.android.quickpuzzle;
 
 import android.Manifest;
+import android.app.ActivityOptions;
+import android.app.Service;
 import android.content.ClipData;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.CursorLoader;
 import android.content.Intent;
+import android.content.ServiceConnection;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.os.IBinder;
 import android.os.Parcelable;
 import android.provider.MediaStore;
 import android.support.annotation.Nullable;
@@ -28,7 +33,9 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.TextView;
 
+import com.dam2.android.quickpuzzle.Holders.Listeners.MyDragListener;
 import com.dam2.android.quickpuzzle.Holders.PecaHolder1;
 import com.dam2.android.quickpuzzle.Holders.PecaHolder2;
 
@@ -38,36 +45,40 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
-public class GameFragment extends Fragment {
+public class GameFragment extends Fragment  {
 
     private Bitmap imatgeGranfromAndroid;
     private final int countColumns=3;
     public List< ImatgeBitmapPosition> imatges;
     private RecyclerView mRecyclerView;
-
-
+    private Intent intent;
+    private boolean mBound=false;
+    private SoundService mService;
+    private static TextView textViewPunutuacio;
     public static GameFragment newInstance(){
         return new GameFragment();
     }
+
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         View v= inflater.inflate( R.layout.fragment_quickpuzzle, container, false );
-
-
+            Partida.setNumintents( 0 );
+            Partida.setPuntuacio( 0 );
             mRecyclerView = (RecyclerView) v.findViewById( R.id.fragment_quickpuzzle );
             imatgeGranfromAndroid = SelectImage();
             imatges = puzzleGeneratorImages( imatgeGranfromAndroid, countColumns );
-
-
+            textViewPunutuacio=(TextView) v.findViewById( R.id.textViewPuntuaucio );
+            textViewPunutuacio.setText( "Puntuacio total: 0" );
             mRecyclerView.setLayoutManager( new GridLayoutManager( getActivity(), countColumns ) );
             mRecyclerView.setAdapter( new ImageAdapter2( imatges, getContext() ) );
+        intent = new Intent(getActivity().getApplicationContext(),SoundService.class);
 
-
-            return v;
+           return v;
     }
+
     private Bitmap SelectImage() {
         Bitmap imatge;
         Intent intent = new Intent( Intent.ACTION_PICK,
@@ -92,6 +103,22 @@ public class GameFragment extends Fragment {
 
 
     }
+    private ServiceConnection mConnection = new ServiceConnection() {
+
+        @Override
+        public void onServiceConnected(ComponentName className,
+                                       IBinder service) {
+            // We've bound to LocalService, cast the IBinder and get LocalService instance
+            SoundService.LocalBinder binder = (SoundService.LocalBinder) service;
+            mService = binder.getService();
+            SoundService.setmBound(true );
+        }
+
+        @Override
+        public void onServiceDisconnected(ComponentName arg0) {
+            SoundService.setmBound(false );
+        }
+    };
     private List<ImatgeBitmapPosition> puzzleGeneratorImages(Bitmap imatgeGran, int countColumns){
         List< ImatgeBitmapPosition> imatges = new ArrayList<ImatgeBitmapPosition>();
         Bitmap imatgeRetocada;
@@ -117,6 +144,9 @@ public class GameFragment extends Fragment {
 Log.v(" imatges num", String.valueOf(  imatges.size()));
           return imatges;
 
+    }
+    public static void SetTextViewPuntuacio(int puntuacio){
+        textViewPunutuacio.setText( "Puntuacio total: "+puntuacio );
     }
 
 }

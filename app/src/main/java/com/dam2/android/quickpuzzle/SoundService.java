@@ -3,8 +3,10 @@ package com.dam2.android.quickpuzzle;
 
 import android.app.Service;
 import android.content.Intent;
+import android.content.ServiceConnection;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
+import android.os.Binder;
 import android.os.IBinder;
 import android.util.Log;
 
@@ -13,20 +15,23 @@ import android.util.Log;
  */
 
 public class SoundService extends Service {
-
+    public static final String TAG = "MyServiceTag";
     public AudioManager audioManager;
-    MediaPlayer mediaPlayer;
-
+    public MediaPlayer mediaPlayer;
+    public static boolean mBound;
+    public static Intent intent;
+    private static ServiceConnection mConnection;
     @Override
-    public IBinder onBind(Intent intent){
-        audioManager = (AudioManager) getSystemService(AUDIO_SERVICE);
-        mediaPlayer = MediaPlayer.create(this, R.raw.tetris1);
-        Log.v("log","hola");
+    public IBinder onBind(Intent intent) {
+        audioManager = (AudioManager) getSystemService( AUDIO_SERVICE );
+        mediaPlayer = MediaPlayer.create( this, R.raw.tetris1 );
+        mediaPlayer.setLooping( true );
+        Log.v( "log", "hola" );
 
         int resultat = audioManager.requestAudioFocus(
                 mAudioFocusListener, AudioManager.STREAM_MUSIC,
-                AudioManager.AUDIOFOCUS_GAIN_TRANSIENT_MAY_DUCK);
-        Log.v("log",String.valueOf(resultat));
+                AudioManager.AUDIOFOCUS_GAIN_TRANSIENT_MAY_DUCK );
+        Log.v( "log", String.valueOf( resultat ) );
 
         if (resultat == AudioManager.AUDIOFOCUS_REQUEST_GRANTED) {
             mediaPlayer.start();
@@ -42,6 +47,56 @@ public class SoundService extends Service {
         return null;
     }
 
+    public static ServiceConnection getmConnection() {
+        return mConnection;
+    }
+
+    public static void setmConnection(ServiceConnection Connection) {
+        mConnection = Connection;
+    }
+
+    public class LocalBinder extends Binder {
+        SoundService getService() {
+            // Return this instance of LocalService so clients can call public methods
+            return SoundService.this;
+        }
+    }
+
+    public static boolean ismBound() {
+        return mBound;
+    }
+
+    public static void setmBound(boolean  bound) {
+       mBound = bound;
+    }
+
+    public static Intent getIntent() {
+        return intent;
+    }
+
+    public static void setIntent(Intent intent) {
+        SoundService.intent = intent;
+    }
+
+    @Override
+    public void onDestroy(){
+        if(mediaPlayer.isPlaying()){
+        mediaPlayer.stop();}
+        mediaPlayer.release();
+        super.onDestroy();
+    }
+
+
+
+    @Override
+    public boolean stopService(Intent name) {
+        if(mediaPlayer.isPlaying()){
+            mediaPlayer.stop();}
+        mediaPlayer.release();
+        return super.stopService( name );
+
+
+    }
 
     private AudioManager.OnAudioFocusChangeListener mAudioFocusListener = new AudioManager.OnAudioFocusChangeListener() {
         public void onAudioFocusChange(int focusChange) {
@@ -64,7 +119,7 @@ public class SoundService extends Service {
                     break;
                 //baixem el volum temporalment
                 case AudioManager.AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK:
-                    mediaPlayer.setVolume(0.5f, 0.5f);
+            //                    mediaPlayer.setVolume(0.5f, 0.5f);
                     //Log.d(LOG, "AudioFocus: rebut AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK");
                     break;
 

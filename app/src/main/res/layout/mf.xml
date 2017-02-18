@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:gravity="center">
+    <com.dam2.android.quickpuzzle.MyLinearLayout
+        android:id="@+id/root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@android:color/transparent">
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:text="AAAAAAAAA" />
+
+        <ImageView
+            android:layout_width="190dp"
+            android:layout_height="190dp"
+            app:srcCompat="@drawable/homer"
+            android:id="@+id/imgViewCarrussel"/>
+    </com.dam2.android.quickpuzzle.MyLinearLayout>
+</LinearLayout>

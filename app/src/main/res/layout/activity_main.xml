@@ -24,23 +24,30 @@
         android:textSize="36sp"
         android:textStyle="normal|bold|italic"/>
 
-    <android.support.design.widget.FloatingActionButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:clickable="true"
-        app:fabSize="mini"
-        app:srcCompat="@android:drawable/ic_lock_silent_mode"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="50dp"
-        android:id="@+id/floatingActionButton"/>
-
     <Button
         android:text="PLAY MY PHOTO PUZZLE"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/btPlayMyPhoto"
-        android:layout_above="@+id/floatingActionButton"
-        android:layout_alignEnd="@+id/textView4"
-        android:layout_marginBottom="63dp"/>
+        android:layout_below="@+id/textView4"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="108dp"/>
+
+    <Button
+        android:text="Carrusell Gallery View"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btPlayMyPhoto"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:id="@+id/btGallery"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/mute"
+        android:layout_below="@+id/btGallery"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="43dp"
+        android:id="@+id/ImgVolume"/>
 </RelativeLayout>

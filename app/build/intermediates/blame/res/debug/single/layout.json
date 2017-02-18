@@ -40,6 +40,10 @@
         "source": "/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/layout/abc_action_menu_item_layout.xml"
     },
     {
+        "merged": "/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/res/merged/debug/layout/activity_gallery.xml",
+        "source": "/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/src/main/res/layout/activity_gallery.xml"
+    },
+    {
         "merged": "/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/res/merged/debug/layout/activity_fragment.xml",
         "source": "/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/src/main/res/layout/activity_fragment.xml"
     },
@@ -68,20 +72,20 @@
         "source": "/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/src/main/res/layout/item.xml"
     },
     {
-        "merged": "/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/res/merged/debug/layout/abc_action_bar_title_item.xml",
-        "source": "/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/layout/abc_action_bar_title_item.xml"
-    },
-    {
         "merged": "/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/res/merged/debug/layout/notification_template_media.xml",
         "source": "/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/layout/notification_template_media.xml"
     },
     {
-        "merged": "/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/res/merged/debug/layout/design_navigation_item.xml",
-        "source": "/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/exploded-aar/com.android.support/design/25.1.0/res/layout/design_navigation_item.xml"
+        "merged": "/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/res/merged/debug/layout/abc_action_bar_title_item.xml",
+        "source": "/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/layout/abc_action_bar_title_item.xml"
     },
     {
         "merged": "/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/res/merged/debug/layout/notification_template_lines_media.xml",
         "source": "/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/layout/notification_template_lines_media.xml"
+    },
+    {
+        "merged": "/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/res/merged/debug/layout/design_navigation_item.xml",
+        "source": "/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/exploded-aar/com.android.support/design/25.1.0/res/layout/design_navigation_item.xml"
     },
     {
         "merged": "/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/res/merged/debug/layout/abc_search_view.xml",
@@ -152,10 +156,6 @@
         "source": "/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/layout/abc_list_menu_item_icon.xml"
     },
     {
-        "merged": "/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/res/merged/debug/layout/activity_game_fragment.xml",
-        "source": "/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/src/main/res/layout/activity_game_fragment.xml"
-    },
-    {
         "merged": "/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/res/merged/debug/layout/list_item.xml",
         "source": "/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/src/main/res/layout/list_item.xml"
     },
@@ -202,6 +202,10 @@
     {
         "merged": "/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/res/merged/debug/layout/support_simple_spinner_dropdown_item.xml",
         "source": "/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/layout/support_simple_spinner_dropdown_item.xml"
+    },
+    {
+        "merged": "/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/res/merged/debug/layout/mf.xml",
+        "source": "/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/src/main/res/layout/mf.xml"
     },
     {
         "merged": "/home/oriol/AndroidStudioProjects/QUICKPUZZLE/app/build/intermediates/res/merged/debug/layout/notification_template_media_custom.xml",
